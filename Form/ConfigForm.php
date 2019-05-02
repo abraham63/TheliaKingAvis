@@ -71,6 +71,17 @@ class ConfigForm extends BaseForm
                 'data' => ConfigQuery::read('tka_status_release')
             ]
         )
+        ->add(
+            'display_tka_widget',
+            'text',
+            [
+                'constraints' => [
+                    new NotBlank()
+                ],
+                'label' => "Afficher le widget sur le site",
+                'data' => ConfigQuery::read('tka_display_tka_widget')
+            ]
+        )
         ;
     }
     /**

@@ -87,6 +87,40 @@
             </div>
             {/form_field}
 
+
+
+            {form_field form=$form field='display_tka_widget'}
+            <div class="form-group {if $error}has-error{/if}">
+              <label class="control-label" for="{$label_attr.for}">
+                {$label}
+                <span class="required">*</span>
+                {form_error form=$form field="status_release"}
+                    <br />
+                    <span class="error">{$message}</span>
+                {/form_error}
+              </label>
+              <fieldset>
+                <input style=display:none;" type="radio" name="{$name}" id="widYes" value="true" {if $value == "true"}checked="checked"{/if}>  <label for="widYes" class=tka_status_label>OUI</label>
+                <input style=display:none;" type="radio" name="{$name}" id="widNo" value="false" {if $value == "false"}checked="checked"{/if}>  <label for="widNo" class=tka_status_label>NON</label>
+
+
+              </fieldset>
+<style media="screen">
+  .tka_status_label {
+    border:1px solid #ccc;
+    margin: 5px;
+    padding : 5px 15px;
+    border-radius:10px;
+    cursor:pointer;
+  }
+  input[type="radio"]:checked + .tka_status_label {
+    color:#50a05d;
+    border:1px solid #50a05d;
+  }
+</style>
+            </div>
+            {/form_field}
+
             <button type="submit" id="tka-save" name="tka_save" value="save" class="form-submit-button btn btn-sm btn-default" title="Save">Valider</button>
           </form>
         {/form}

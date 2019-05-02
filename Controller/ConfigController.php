@@ -30,6 +30,7 @@ class ConfigController extends BaseAdminController
             ConfigQuery::write('tka_marchand_token', $configForm->get('marchand_token')->getData(), 1, 1);
             ConfigQuery::write('tka_marchand_private_key', $configForm->get('marchand_private_key')->getData(), 1, 1);
             ConfigQuery::write('tka_status_release', $configForm->get('status_release')->getData(), 1, 1);
+            ConfigQuery::write('tka_display_tka_widget', $configForm->get('display_tka_widget')->getData(), 1, 1);
             $response = RedirectResponse::create(URL::getInstance()->absoluteUrl('/admin/module/KingAvis'));
         } catch (FormValidationException $e) {
             $errorMessage = $e->getMessage();
