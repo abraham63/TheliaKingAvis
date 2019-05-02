@@ -38,9 +38,6 @@ class KingAvisListener extends BaseAction implements EventSubscriberInterface
         $order = $event->getOrder();
         $customer = $order->getCustomer();
         if($order->getStatusId() == ConfigQuery::create()->findOneByName('tka_status_release')->getValue()){
-            //STATUS DE DECLENCHEMENT PROCEDER A L'ENVOI
-
-            //init all vars needed
             $ka_id = ConfigQuery::create()->findOneByName('tka_marchand_id')->getValue();
             $ka_token = ConfigQuery::create()->findOneByName('tka_marchand_token')->getValue();
             $ka_pk = ConfigQuery::create()->findOneByName('tka_marchand_private_key')->getValue();
@@ -51,7 +48,6 @@ class KingAvisListener extends BaseAction implements EventSubscriberInterface
             $t_firstname = $customer->getFirstname();
             $t_lastname = $customer->getLastname();
             $t_iso_lang = $customer->getCustomerLang()->getCode();
-            //proceed send
             $curl = curl_init();
             if(empty($ka_id) || empty($ka_token) || empty($ka_pk) ){
                 throw new \RuntimeException("you must configure your King Avis access ");
