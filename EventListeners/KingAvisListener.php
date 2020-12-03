@@ -1,8 +1,6 @@
 <?php
 /*************************************************************************************/
-/*      This file is part of the module Erp                               */
-/*                                                                                   */
-/*      Copyright (c) Reservoricom                                                     */
+/*      Copyright (c) Kevin SEEBACH                                                  */
 /*                                                                                   */
 /*      For the full copyright and license information, please view the LICENSE.txt  */
 /*      file that was distributed with this source code.                             */
